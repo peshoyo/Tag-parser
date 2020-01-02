@@ -24,7 +24,7 @@ Aggregate: AGG-SUM, AGG-PRO, AGG-AVG, AGG-FST, AGG-LST
 	4)<AGG-FST>1 2 3</AGG-FST> ⇒ 1
 	5)<AGG-LST>1 2 3</AGG-LST> ⇒ 3
 
-Sorting: SRT-REV, <SRT-ORD "ARG">, където ARG е ASC или DSC, <SRT-SLC "N">, където N е положително цяло число, <SRT-DST>
+Sorting: SRT-REV, <SRT-ORD "ARG">, където ARG е ASC или DSC, <SRT-SLC "N">, където N е положително цяло число, SRT-DST
 	
 	1)<SRT-REV>1 2 3</SRT-REV> ⇒ 3 2 1 (обръща списъка)
 	2)<SRT-ORD "ASC">3 2 1</SRT-ORD> ⇒ 1 2 3 (сортира във възходящ ред (при аргумент “ASC”) или в низходящ ред (при аргумент “DSC”)
