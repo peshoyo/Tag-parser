@@ -9,9 +9,7 @@
 
 Езикът "IML" има три категории тагове:
 
-Map: Map: <MAP-INC "N"> и <MAP-MLT "N"> където N е дробно число
-
-1)<MAP-INC "1">1 2 3</MAP-INC> ⇒ 2 3 4
-
-2)<MAP-MLT "2">1 2 3</MAP-MLT> ⇒ 2 4 6
+Map: <MAP-INC "N"> и <MAP-MLT "N"> където N е дробно число
+	1)<MAP-INC "1">1 2 3</MAP-INC> ⇒ 2 3 4
+	2)<MAP-MLT "2">1 2 3</MAP-MLT> ⇒ 2 4 6
 
