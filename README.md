@@ -9,21 +9,9 @@
 
 Езикът "IML" има три категории тагове:
 
-Map: <MAP-INC "N"> и <MAP-MLT "N"> където N е дробно число
-<MAP-INC "1">1 2 3</MAP-INC> ⇒ 2 3 4
-<MAP-MLT "2">1 2 3</MAP-MLT> ⇒ 2 4 6
+Map: Map: <MAP-INC "N"> и <MAP-MLT "N"> където N е дробно число
 
+1)<MAP-INC "1">1 2 3</MAP-INC> ⇒ 2 3 4
 
-Aggregate: <AGG-SUM>, <AGG-PRO>, <AGG-AVG>, <AGG-FST>, <AGG-LST>
-<AGG-SUM>1 2 3</AGG-SUM> ⇒ 6
-<AGG-PRO>1 2 3</AGG-PRO> ⇒ 6
-<AGG-AVG>1 2 3</AGG-AVG> ⇒ 2
-<AGG-FST>1 2 3</AGG-FST> ⇒ 1
-<AGG-LST>1 2 3</AGG-LST> ⇒ 3
+2)<MAP-MLT "2">1 2 3</MAP-MLT> ⇒ 2 4 6
 
-
-Sorting: <SRT-REV>, <SRT-ORD "ARG">, където ARG е ASC или DSC, <SRT-SLC "N">, където N е положително цяло число, <SRT-DST>
-<SRT-REV>1 2 3</SRT-REV> ⇒ 3 2 1 (обръща списъка)
-<SRT-ORD "ASC">3 2 1</SRT-ORD> ⇒ 1 2 3 (сортира във възходящ ред (при аргумент “ASC”) или в низходящ ред (при аргумент “DSC”)
-<SRT-SLC "1">3 2 1</SRT-SLC> ⇒ 2 1 (връща подсписък от посочения индекс нататък)
-<SRT-DST>4 8 4 3</SRT-DST> ⇒ 4 8 3 (премахва дубликати)
