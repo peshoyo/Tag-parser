@@ -1,5 +1,4 @@
 #include<iostream>
-constexpr auto FILEPATH = "C:/Users/Peter/source/repos/IML/IML/asd.txt";
 const auto MAX_FILEPATH_LENGTH = 256;
 
 extern bool parse(const char[], const char[]);
