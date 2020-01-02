@@ -14,6 +14,12 @@
 Map: <MAP-INC "N"> и <MAP-MLT "N"> където N е дробно число
 
 	1)<MAP-INC "1">1 2 3</MAP-INC> ⇒ 2 3 4
-	
 	2)<MAP-MLT "2">1 2 3</MAP-MLT> ⇒ 2 4 6
 
+Aggregate: <AGG-SUM>, <AGG-PRO>, <AGG-AVG>, <AGG-FST>, <AGG-LST>
+	
+	1)<AGG-SUM>1 2 3</AGG-SUM> ⇒ 6
+	2)<AGG-PRO>1 2 3</AGG-PRO> ⇒ 6
+	3)<AGG-AVG>1 2 3</AGG-AVG> ⇒ 2
+	4)<AGG-FST>1 2 3</AGG-FST> ⇒ 1
+	5)<AGG-LST>1 2 3</AGG-LST> ⇒ 3
