@@ -16,10 +16,17 @@ Map: <MAP-INC "N"> и <MAP-MLT "N"> където N е дробно число
 	1)<MAP-INC "1">1 2 3</MAP-INC> ⇒ 2 3 4
 	2)<MAP-MLT "2">1 2 3</MAP-MLT> ⇒ 2 4 6
 
-Aggregate: <AGG-SUM>, <AGG-PRO>, <AGG-AVG>, <AGG-FST>, <AGG-LST>
+Aggregate: AGG-SUM, AGG-PRO, AGG-AVG, AGG-FST, AGG-LST
 	
 	1)<AGG-SUM>1 2 3</AGG-SUM> ⇒ 6
 	2)<AGG-PRO>1 2 3</AGG-PRO> ⇒ 6
 	3)<AGG-AVG>1 2 3</AGG-AVG> ⇒ 2
 	4)<AGG-FST>1 2 3</AGG-FST> ⇒ 1
 	5)<AGG-LST>1 2 3</AGG-LST> ⇒ 3
+
+Sorting: SRT-REV, <SRT-ORD "ARG">, където ARG е ASC или DSC, <SRT-SLC "N">, където N е положително цяло число, <SRT-DST>
+	
+	1)<SRT-REV>1 2 3</SRT-REV> ⇒ 3 2 1 (обръща списъка)
+	2)<SRT-ORD "ASC">3 2 1</SRT-ORD> ⇒ 1 2 3 (сортира във възходящ ред (при аргумент “ASC”) или в низходящ ред (при аргумент “DSC”)
+	3)<SRT-SLC "1">3 2 1</SRT-SLC> ⇒ 2 1 (връща подсписък от посочения индекс нататък)
+	4)<SRT-DST>4 8 4 3</SRT-DST> ⇒ 4 8 3 (премахва дубликати)
