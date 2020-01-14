@@ -106,7 +106,7 @@ bool validate(const char filename[MAX_FILEPATH_LENGTH]) {
 							}
 							input_stream.get(ch);
 							if(ch != '>'){
-								std::cerr << "Invalid symbols in tag SRT-ORD, after parameter in line " << lines << std::endl;
+								std::cerr << "Invalid symbols in tag SRT-ORD, after parameter: line " << lines << std::endl;
 								return false;
 							}
 							else break;
@@ -132,7 +132,7 @@ bool validate(const char filename[MAX_FILEPATH_LENGTH]) {
 							}
 							input_stream.get(ch);
 							if (ch != '>') {
-								std::cerr << "Invalid symbols in function SRT-SLC: line " << lines << std::endl;
+								std::cerr << "Invalid symbols in function SRT-SLC, after parameter: line " << lines << std::endl;
 								return false;
 							}
 							else break;
@@ -157,7 +157,7 @@ bool validate(const char filename[MAX_FILEPATH_LENGTH]) {
 								}
 								input_stream.get(ch);
 								if (ch != '>') {
-									std::cerr << "Invalid symbols in tag " << tag << ": line " << lines << std::endl;
+									std::cerr << "Invalid symbols in " << tag << ", after parameter: line " << lines << std::endl;
 									return false;
 								}
 								else break;
@@ -195,7 +195,7 @@ bool validate(const char filename[MAX_FILEPATH_LENGTH]) {
 	}
 
 	if (!tag_stack.empty()) {
-		std::cerr << "Expecting closing tag /" << tag_stack.top() << " in line " << lines << std::endl;
+		std::cerr << "Expecting closing tag /" << tag_stack.top() << ": line " << lines << std::endl;
 		return false;
 	}
 	else return true;
