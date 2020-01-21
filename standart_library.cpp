@@ -39,7 +39,7 @@ List srt_ord(List l, std::string param) {
 		 new_list.push_back(temp);
 	 }
 	 return new_list;
- }
+ } 
 
  /// MAP
  List map_inc(List l, double x) {

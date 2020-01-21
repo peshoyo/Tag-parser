@@ -6,7 +6,6 @@
 
 using List = std::list<double>;
 
-
 //	SORTING  //
 List srt_ord(List , std::string );
 List srt_rev(List );

@@ -117,7 +117,7 @@ bool parse(const char filename[MAX_FILEPATH_LENGTH], const char outname[MAX_FILE
 		 }
 		 
  	 }
-
+ 
 	 std::list<double> out_list = number_stack.top();
 	 for (std::list<double>::iterator it = out_list.begin(); it != out_list.end(); ++it)
 		 fout << *it << ' ';
