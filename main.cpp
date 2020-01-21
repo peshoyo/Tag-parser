@@ -1,3 +1,6 @@
+//Author: Petar Angelov
+//Date: 21/01/2020
+
 #include<iostream>
 constexpr auto FILEPATH = "C:/Users/Peter/Desktop/tests/test9.txt";
 const auto MAX_FILEPATH_LENGTH = 256;

@@ -1,3 +1,6 @@
+//Author: Petar Angelov
+//Date: 21/01/2020
+
 #include<list>
 #include<string>
 #include "standart_library.h"

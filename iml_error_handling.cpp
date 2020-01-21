@@ -1,3 +1,6 @@
+//Author: Petar Angelov
+//Date: 21/01/2020
+
 #include<fstream>
 #include<iostream>
 #include<stack>

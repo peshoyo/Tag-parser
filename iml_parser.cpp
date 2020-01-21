@@ -1,3 +1,6 @@
+//Author: Petar Angelov
+//Date: 21/01/2020
+
 #pragma once
 #include<iostream>
 #include<fstream>
