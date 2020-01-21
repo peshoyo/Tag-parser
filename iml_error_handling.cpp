@@ -10,20 +10,14 @@ static const auto MAX_FILEPATH_LENGTH = 256;
 
 
 static bool is_valid(std::string tag) {
-	std::string tags[11] = { "SRT-REV", "SRT-DST", "SRT-SLC", "SRT-ORD", "MAP-INC", "MAP-MLT",
-	"AGG-AVG", "AGG-SUM", "AGG-PRO", "AGG-FST", "AGG-LAST" };
-	
-	for (int i = 0; i < 11; i++) {
-		if (tag == tags[i])return true;
-	}
-	return false;
-
-	/*return tag == "SRT-REV" || tag == "SRT-DST" || tag == "AGG-SUM" || tag == "AGG-PRO" || tag == "AGG-FST" 
-		|| tag == "AGG-AVG" || tag == "AGG-LST" || tag == "MAP-INC" || tag == "MAP-MLT" || tag == "SRT-SLC" || tag == "SRT-ORD";*/
+	return tag == "SRT-REV" || tag == "SRT-DST" || tag == "AGG-SUM" || tag == "AGG-PRO" || tag == "AGG-FST" 
+		|| tag == "AGG-AVG" || tag == "AGG-LST" || tag == "MAP-INC" || tag == "MAP-MLT" || tag == "SRT-SLC" || tag == "SRT-ORD";
 }
+
 static bool is_number(const char& c) {
 	return c >= '0' && c <= '9';
 }
+
 static bool is_double(const std::string number_string) {
 	bool point_flag = false;
 	int i = 0;
