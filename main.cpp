@@ -13,15 +13,15 @@ int main() {
 	char filename[MAX_FILEPATH_LENGTH];
 	char outname[MAX_FILEPATH_LENGTH];
 
-	//std::cout << "Enter the filepath of an existing input file: ";
-	//std::cin >> filename;
+	std::cout << "Enter the filepath of an existing input file: ";
+	std::cin >> filename;
 	std::cout << "Enter the name of an ouput file: ";
 	std::cin >> outname;
 	std::cout << "Validating..." << std::endl;
-	if (validate(FILEPATH)) {
+	if (validate(filename)) {
 		std::cout << "Validation complete." << std::endl;
 		std::cout << "Parsing..." <<std::endl;
-		if (parse(FILEPATH, outname))std::cout << "Parsing complete." << std::endl;
+		if (parse(filename, outname))std::cout << "Parsing complete." << std::endl;
 		else std::cout << "Parsing failed." << std::endl;
 	}
 	else std::cout << "Validation failed.";
