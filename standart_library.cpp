@@ -2,7 +2,8 @@
 #include<string>
 #include "standart_library.h"
 
-///SORTING
+
+/// SORTING
 List srt_ord(List l, std::string param) {
 	if (param == "ASC") {
 		l.sort();
@@ -37,7 +38,7 @@ List srt_ord(List l, std::string param) {
 	 return new_list;
  }
 
- ///MAP
+ /// MAP
  List map_inc(List l, double x) {
 	 for (std::list<double>::iterator it = l.begin(); it != l.end(); ++it)
 		 *it += x;
@@ -49,7 +50,7 @@ List srt_ord(List l, std::string param) {
 	 return l;
  }
 
- ///AGGREGATE 
+ /// AGGREGATE 
 List agg_sum(const List l) {
 	List new_l;
 	double sum = 0;

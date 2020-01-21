@@ -3,7 +3,9 @@
 #include<fstream>
 #include<stack>
 #include<string>
+#include<tuple>
 #include "standart_library.h"
+
 static const auto MAX_FILEPATH_LENGTH = 256;
 
 static bool is_number(const char& c) {
@@ -35,7 +37,7 @@ bool parse(const char filename[MAX_FILEPATH_LENGTH], const char outname[MAX_FILE
 		 if (ch == ' ')continue;
 		 if (is_number(ch) || ch == '-') {
 			 std::string number_string = "";
-			 while (ch != ' ' && ch != '<' && ch != '\n') {
+			 while (ch != ' ' && ch != '<' && ch != '\n' && !fin.eof()) {
 				 number_string += ch;
 				 fin.get(ch);
 			 }
@@ -75,45 +77,31 @@ bool parse(const char filename[MAX_FILEPATH_LENGTH], const char outname[MAX_FILE
 				 
 			 }
 			 if (tag[0] == '/') {
-				 if (number_stack.size() > 1) {
-					 std::list<double> args = number_stack.top();
-					 number_stack.pop();
+				 std::list<double> args = number_stack.top();
+				 number_stack.pop();
+
+				 std::tuple<std::string, std::string> function_param = function_stack.top();
+				 std::string function = std::get<0>(function_param);
+				 std::string parameter = std::get<1>(function_param);
+				 function_stack.pop();
+				 if (function == "SRT-SLC") {
+					 if (stoul(parameter) >= args.size()) {
+						 std::cerr << "Given parameter in function SRT-SLC exceed the size of the list, try with postion N, N e [0, Max Position]" << std::endl;
+						 return false;
+					 }
+				 }
+				 std::list<double> new_list = use_function(function, parameter, args);
+				 if (number_stack.size() > 0) {
 					 std::list<double> args2 = number_stack.top();
 					 number_stack.pop();
-					 std::tuple<std::string, std::string> function_param = function_stack.top();
-					 std::string function = std::get<0>(function_param);
-					 std::string parameter = std::get<1>(function_param);
-					 function_stack.pop();
-					 if (function == "SRT-SLC") {
-						 if (stoul(parameter) >= args.size()) {
-							 std::cerr << "Given parameter in function SRT-SLC exceed the size of the list, try with postion N, N e [0, Max Position]" << std::endl;
-							 return false;
-						 }
-					 }
+
 					 std::list<double> new_list = use_function(function, parameter, args);
 					 for (auto t : new_list) {
 						 args2.push_back(t);
 					 }
 					 number_stack.push(args2);
 				 }
-				 else {
-					 std::list<double> args = number_stack.top();
-					 number_stack.pop();
-		
-					 std::tuple<std::string, std::string> function_param = function_stack.top();
-					 std::string function = std::get<0>(function_param);
-					 std::string parameter = std::get<1>(function_param);
-					 function_stack.pop();
-					 if (function == "SRT-SLC") {
-						 //std::cout << stoul(parameter);
-						 if (stoul(parameter) >= args.size()) {
-							 std::cerr << "Given parameter in function SRT-SLC exceed the size of the list, try with postion N, N e [0, Max Position]" << std::endl;
-							 return false;
-						 }
-					 }
-					 std::list<double> new_list = use_function(function, parameter, args);
-					 number_stack.push(new_list);
-				 }
+				 else { number_stack.push(new_list); }
 					
 			 }
 			 else {		
